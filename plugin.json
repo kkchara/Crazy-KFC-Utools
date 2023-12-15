@@ -1,0 +1,12 @@
+{
+	"main": "main.html",
+	"logo": "logo.png",
+	"preload": "preload.js",
+	"features": [
+		{
+		  "code": "KFC",
+		  "explain": "输出随机疯狂星期四文案",
+			"cmds":["KFC", "kfc", "疯狂星期四", "星期四", "Thursday"]
+		}
+	]
+}
