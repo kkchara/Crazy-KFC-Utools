@@ -7,19 +7,39 @@
     <style>
         body {
           font-family: sans-serif;
-          margin: 20px;
+          margin: 22px;
           text-align: center;
         }
         #quote-container {
-          border: 1px solid #ddd;
+          position: absolute;
+          top: 100px;
+          right: 20px;
+          left: 20px;
           padding: 20px;
-          font-size: 16px;
+          font-size: 20px;
           line-height: 1.5;
         }
         #quote-text {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          left: 20px;
+          z-index: 2;
           margin-bottom: 10px;
         }
+        #quote-text-border {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          left: 20px;
+          z-index: 1;
+          -webkit-text-stroke: 2px #ffffff;
+        }
         #button {
+          position: absolute;
+          top: -30px;
+          right: 20px;
+          left: 20px;
           background-color: #007bff;
           color: white;
           padding: 10px 20px;
@@ -32,7 +52,8 @@
 <body>
     <h1>Random Crazy Thursday!</h1>
   <div id="quote-container">
-    <p id="quote-text"></p>
+    <div id="quote-text"></div>
+    <div id="quote-text-border"></div>
     <button id="button" onclick="getRandomQuote()">随机一句</button>
   </div>
 
@@ -235,7 +256,10 @@
       "0约1去开房，0到之后发现床上坐着个陌生人怀疑是不是走错了房间，正要关门时，1刚洗完澡从卫生间出来，0看到后顿时心生不满的质问道这是谁，1连忙走到他的耳边轻声道“今天肯德基疯狂星期四，买1送1”",
       "有没有要找工作的？我这边内推入职，朝九晚六，做五休二，全国都有分公司。前三个月试用期每个月8000块，满三个月转正月薪26000，一年后给你买车，两年后给你买房。有意者点击头像私聊，并交50块押金，因为今天星期四",
       "前期貂蝉确实打不过张良，张良一二技能控制加伤害清线很快，但我建议貂蝉第一件出吸血书因为这样可以随时补充状态，而张亮麻辣烫是真的非常好吃，特别是泡了汤汁的油条和方便面，加上麻酱真的是人间美味，所以得出结论，肯德基疯狂星期四v我50",
-      "找对象五年了，多了87个外卖地址，31个收货地址，别的什么也没留下。时常被人完弄感情，但还是憧憬爱情，想起这些事趴桌子上大哭，正当我打开窗户想跳楼的时候，不小心打开了群，觉得也许还能再相信一次爱情，群里帅哥美女v50疯狂星期四，我给你们讲讲我的故事"
+      "找对象五年了，多了87个外卖地址，31个收货地址，别的什么也没留下。时常被人完弄感情，但还是憧憬爱情，想起这些事趴桌子上大哭，正当我打开窗户想跳楼的时候，不小心打开了群，觉得也许还能再相信一次爱情，群里帅哥美女v50疯狂星期四，我给你们讲讲我的故事",
+      "臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。先帝不以臣卑鄙，请我吃肯德基，咨臣以当世之事，由是感激，遂许先帝以驱驰",
+      "说句实在话，离婚这么多年，竟然在微信遇到你了。你过得挺好我也就放心了。孩子上四年级了，成绩一直都很好，连续三年拿班上第一名，就是性格像你，一出事就逃避，孩子总问妈妈什么时候来参加家长会。有时间就来看看孩子吧，多陪陪孩子，孩子今天想吃肯德基，因为今天是肯德基疯狂星期四，微信我六十，我带孩子吃吮指原味鸡。我在说谁，自己心里清楚",
+      "从进群的那天起 我就关注你了 经常翻你朋友圈 不善言辞的我 不敢和你聊天 怕打扰你 但是 我很确信这是喜欢 这条微信我设置了仅你可见 你要同意你就拍一拍我 V我50 想今天和你一起过肯德基疯狂星期四"
     ]
   }
     `
@@ -248,6 +272,8 @@
       const randomText = data.post[randomIndex];
 
       document.getElementById("quote-text").innerText = randomText;
+
+      document.getElementById("quote-text-border").innerText = randomText;
     }
 
     getRandomQuote();
