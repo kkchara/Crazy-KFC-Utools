@@ -38,7 +38,7 @@
         #button {
           position: absolute;
           top: -30px;
-          right: 20px;
+          right: 390px;
           left: 20px;
           background-color: #007bff;
           color: white;
@@ -46,15 +46,30 @@
           border: none;
           border-radius: 5px;
           cursor: pointer;
+          font-size: 16px;
+        }
+        #button2 {
+          position: absolute;
+          top: -30px;
+          right: 20px;
+          left: 390px;
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
         }
       </style>
 </head>
 <body>
     <h1>Random Crazy Thursday!</h1>
   <div id="quote-container">
+    <button id="button" onclick="getRandomQuote()">随机一句</button>
+    <button id="button2" onclick="utoolPraseSub()">复制文案</button>
     <div id="quote-text"></div>
     <div id="quote-text-border"></div>
-    <button id="button" onclick="getRandomQuote()">随机一句</button>
   </div>
 
   <script>
@@ -291,6 +306,16 @@
       document.getElementById("quote-text").innerText = randomText;
 
       document.getElementById("quote-text-border").innerText = randomText;
+
+      document.getElementById("button2").innerText = "复制文案"
+    }
+
+    function utoolPraseSub() {
+      
+      window.api.utoolPrase(document.getElementById("quote-text").innerText)
+
+      document.getElementById("button2").innerText = "复制成功"
+    
     }
 
     getRandomQuote();
