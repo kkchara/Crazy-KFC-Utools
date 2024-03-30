@@ -21,7 +21,7 @@
         }
         #quote-text {
           position: absolute;
-          top: 20px;
+          top: 60px;    
           right: 20px;
           left: 20px;
           z-index: 2;
@@ -29,7 +29,7 @@
         }
         #quote-text-border {
           position: absolute;
-          top: 20px;
+          top: 60px;
           right: 20px;
           left: 20px;
           z-index: 1;
@@ -37,7 +37,7 @@
         }
         #button {
           position: absolute;
-          top: -30px;
+          top: 10px;
           right: 390px;
           left: 20px;
           background-color: #007bff;
@@ -50,9 +50,22 @@
         }
         #button2 {
           position: absolute;
-          top: -30px;
+          top: 10px ;
           right: 20px;
           left: 390px;
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+        #button0 {
+          position: absolute;
+          top: -38px;
+          right: 20px;
+          left: 20px;
           background-color: #007bff;
           color: white;
           padding: 10px 20px;
@@ -66,6 +79,7 @@
 <body>
     <h1>Random Crazy Thursday!</h1>
   <div id="quote-container">
+    <button id="button0" onclick="getRandomQuote(), utoolPraseSub()">随机并自动复制 <b>下一句</b></button>
     <button id="button" onclick="getRandomQuote()">随机一句</button>
     <button id="button2" onclick="utoolPraseSub()">复制文案</button>
     <div id="quote-text"></div>
